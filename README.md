@@ -1,4 +1,4 @@
-# Model React with <em> eslint airbnb typescript</em> ( base information )
+# Model React with <em> eslint airbnb </em> ( base information )
 ## <img src="https://vscode.dev/static/stable/favicon.ico" alt="drawing" height="30"/> VSCode extension
 
 You need to install : **ES Lint**
