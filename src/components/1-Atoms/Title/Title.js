@@ -5,7 +5,7 @@ import './title.scss';
 
 function Title({ title }) {
   return (
-    <header className="title">{title}</header>
+    <h1 className="title">{title}</h1>
   );
 }
 

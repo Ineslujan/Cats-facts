@@ -1,29 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import Button from '../Atoms/Button/Button';
-import RefreshFactButton from '../Atoms/RefreshFactButton/RefreshFactButton';
-import Title from '../Atoms/Title/Title';
-import TitleChapter from '../Atoms/TitleChapter/TitleChapter';
-import RandomFact from '../RandomFact/RandomFact';
+import getRandomFact from '../../requests/getRandomFact';
+
+import Footer from '../3-Organisms/Footer/Footer';
+import Header from '../3-Organisms/Header/Header';
+
+import Main from '../3-Organisms/Main/Main';
 
 function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [dataFactApi, setDataFactApi] = useState('');
+  // const [isHome, setIsHome] = useState(true);
+
+  const getRandomFactDatas = async () => {
+    setIsLoading(true);
+
+    const datas = await getRandomFact();
+
+    setDataFactApi(datas.fact);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    getRandomFactDatas();
+  }, []);
+
   return (
     <>
-      <Title title="Welcome" />
-      <main>
-        <section>
-          <RandomFact />
-          <RefreshFactButton />
-        </section>
-        <section>
-          <TitleChapter title="Explore all breeds" />
-          <Button name="Breeds" />
-        </section>
-        <section>
-          <TitleChapter title="Explore all facts" />
-          <Button name="Facts" />
-        </section>
-      </main>
+      <Header />
+      <Main
+        isLoading={isLoading}
+        dataFactApi={dataFactApi}
+        getRandomFactDatas={getRandomFactDatas}
+      />
+      <Footer />
     </>
   );
 }
