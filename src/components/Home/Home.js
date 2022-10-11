@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 import getRandomFact from '../../requests/getRandomFact';
-
-import Footer from '../3-Organisms/Footer/Footer';
-import Header from '../3-Organisms/Header/Header';
-
 import Main from '../3-Organisms/Main/Main';
+import MainContent from '../3-Organisms/MainContent/MainContent';
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -26,15 +23,14 @@ function Home() {
   }, []);
 
   return (
-    <>
-      <Header />
-      <Main
+    <Main>
+      <MainContent
         isLoading={isLoading}
         dataFactApi={dataFactApi}
         getRandomFactDatas={getRandomFactDatas}
       />
-      <Footer />
-    </>
+    </Main>
+
   );
 }
 

@@ -1,47 +1,31 @@
 import { v4 as uuid } from 'uuid';
 import React, { useEffect, useState } from 'react';
-import getBreeds from '../../requests/getBreeds';
+import getFacts from '../../requests/getFacts';
+import Main from '../3-Organisms/Main/Main';
 
 function Facts() {
   const [datasApi, setDatasApi] = useState([]);
-  const [linksApi, setLinksApi] = useState([]);
+
+  const getFactsDatas = async () => {
+    const datas = await getFacts();
+
+    setDatasApi(datas);
+  };
 
   useEffect(() => {
-    const getBreedsDatas = async () => {
-      const datas = await getBreeds();
-
-      console.log('================>', datas);
-
-      setDatasApi(datas.breedsDatas);
-      setLinksApi(datas.breedsLinks);
-    };
-
-    getBreedsDatas();
+    getFactsDatas();
   }, []);
 
-  console.log('ddddddddddd', datasApi, linksApi);
-
   return (
-    <div>
-      <ul>
+    <Main>
+      <ul className="facts">
         {datasApi && datasApi.map((d) => (
-          <li key={uuid()}>
-            <p>{d.breed}</p>
-            <p>{d.country}</p>
-            <p>{d.origin}</p>
-            <p>{d.coat}</p>
-            <p>{d.pattern}</p>
+          <li key={uuid()} className="facts-fact">
+            {d.fact}
           </li>
         ))}
       </ul>
-      <p>
-        {/* {datasApi?.breed && datasApi.breed}
-        {datasApi?.country && datasApi.country}
-        {datasApi?.origin && datasApi.origin}
-        {datasApi?.coat && datasApi.coat}
-        {datasApi?.pattern && datasApi.pattern} */}
-      </p>
-    </div>
+    </Main>
   );
 }
 

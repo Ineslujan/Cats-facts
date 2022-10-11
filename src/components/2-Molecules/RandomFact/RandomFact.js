@@ -5,9 +5,11 @@ import Loader from '../../1-Atoms/Loader/Loader';
 import RefreshFactButton from '../../1-Atoms/RefreshFactButton/RefreshFactButton';
 import RandomFactApi from '../../1-Atoms/RandomFactApi/RandomFactApi';
 
+import './randomFact.scss';
+
 function RandomFact({ isLoading, dataFactApi, getRandomFactDatas }) {
   return (
-    <section>
+    <section className="randomFact">
       {!isLoading ? <RandomFactApi dataFactApi={dataFactApi} /> : <Loader />}
       {!isLoading && <RefreshFactButton getRandomFactDatas={getRandomFactDatas} />}
     </section>

@@ -4,7 +4,7 @@ import './loader.scss';
 
 function Loader() {
   return (
-    <p className="loader">...</p>
+    <div className="dots-3" />
   );
 }
 
