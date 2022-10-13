@@ -4,15 +4,19 @@ import { v4 as uuid } from 'uuid';
 
 import menu from '../../../datas/menu.json';
 
+import './navBar.scss';
+
 function NavBar() {
   const activeClassName = 'underline';
 
   return (
     <ul className="nav">
       {menu.pages.map((p) => (
-        <li key={uuid()} className={`nav-${p.toLowerCase()}`}>
-          <NavLink to={`/${p.toLowerCase()}`} className={({ isActive }) => (isActive ? activeClassName : undefined)}>{p}</NavLink>
-        </li>
+        <NavLink key={uuid()} to={`/${p.toLowerCase()}`} className={({ isActive }) => (isActive ? activeClassName : undefined)}>
+          <li className={`nav-${p.toLowerCase()}`}>
+            {p}
+          </li>
+        </NavLink>
       ))}
     </ul>
 

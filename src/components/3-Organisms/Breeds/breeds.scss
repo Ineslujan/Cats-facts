@@ -1,0 +1,17 @@
+.breeds {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.breed {
+  width: 300px;
+  // height: 200px;
+  border: 1px solid black;
+
+  &-from {
+    display: block;
+    font-size: 0.7rem;
+  }
+}

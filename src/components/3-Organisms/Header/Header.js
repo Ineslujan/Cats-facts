@@ -5,9 +5,11 @@ import NavBar from '../../2-Molecules/NavBar/NavBar';
 
 import menu from '../../../datas/menu.json';
 
+import './header.scss';
+
 function Header() {
   return (
-    <header>
+    <header className="header">
       <Title title={menu.title} />
       <NavBar />
     </header>

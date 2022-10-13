@@ -1,5 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+
+import getRandomFact from '../../../requests/getRandomFact';
 
 import Loader from '../../1-Atoms/Loader/Loader';
 import RefreshFactButton from '../../1-Atoms/RefreshFactButton/RefreshFactButton';
@@ -7,7 +8,23 @@ import RandomFactApi from '../../1-Atoms/RandomFactApi/RandomFactApi';
 
 import './randomFact.scss';
 
-function RandomFact({ isLoading, dataFactApi, getRandomFactDatas }) {
+function RandomFact() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [dataFactApi, setDataFactApi] = useState('');
+
+  const getRandomFactDatas = async () => {
+    setIsLoading(true);
+
+    const datas = await getRandomFact();
+
+    setDataFactApi(datas.fact);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    getRandomFactDatas();
+  }, []);
+
   return (
     <section className="randomFact">
       {!isLoading ? <RandomFactApi dataFactApi={dataFactApi} /> : <Loader />}
@@ -15,11 +32,5 @@ function RandomFact({ isLoading, dataFactApi, getRandomFactDatas }) {
     </section>
   );
 }
-
-RandomFact.propTypes = {
-  isLoading: PropTypes.bool.isRequired,
-  dataFactApi: PropTypes.string.isRequired,
-  getRandomFactDatas: PropTypes.func.isRequired,
-};
 
 export default RandomFact;

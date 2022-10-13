@@ -1,16 +1,18 @@
 import axios from 'axios';
 import api from './api';
 
-const getBreeds = async () => {
+const getBreeds = async (newPage) => {
   try {
-    const response = await axios.get(`${api}/breeds?page=1`);
+    const response = await axios.get(`${api}/breeds?page=${newPage}`);
 
     const breedsDatas = response.data.data;
-    const breedsLinks = response.data.links;
+    const breedsCurrentPage = response.data.current_page;
+    const breedsLastpage = response.data.last_page;
 
     return {
       breedsDatas,
-      breedsLinks,
+      breedsCurrentPage,
+      breedsLastpage,
     };
   } catch (error) {
     console.error(error);

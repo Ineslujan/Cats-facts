@@ -8,16 +8,16 @@ import menu from '../../../datas/menu.json';
 
 function Sections() {
   return (
-    <>
+    <section className="breedsOrFacts">
       {
         menu.pages.map((m) => (
-          <section key={uuid()} className={`section-${m.toLowerCase()}`}>
+          <article key={uuid()} className={`breedsOrFacts-${m.toLowerCase()}`}>
             <TitleChapter title={`Explore all ${m.toLowerCase()}`} />
             <Button name={m} />
-          </section>
+          </article>
         ))
       }
-    </>
+    </section>
   );
 }
 

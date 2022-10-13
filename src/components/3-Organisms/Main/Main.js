@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Main({ children }) {
   return (
-    <main className="Main">
+    <main className="main">
       {children}
     </main>
   );

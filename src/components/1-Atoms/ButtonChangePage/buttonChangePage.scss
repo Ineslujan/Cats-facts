@@ -1,0 +1,9 @@
+.buttonChangePage {
+  padding: 20px;
+  background-color: brown;
+
+  &-inactive {
+    padding: 20px;
+    pointer-events: none;
+  }
+}
