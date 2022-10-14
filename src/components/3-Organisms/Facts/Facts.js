@@ -28,14 +28,18 @@ function Facts() {
     getFactsDatas(1);
   }, []);
 
-  return isLoading ? <Loader /> : (
+  return (
     <Main>
-      <ul className="facts">
-        {datasApi && datasApi.map((d) => (
-          <CardFact key={uuid()} fact={d.fact} />
-        ))}
-      </ul>
-      <Pagination currentPage={currentPage} lastPage={lastPage} getDatas={getFactsDatas} />
+      {isLoading ? <Loader /> : (
+        <>
+          <ul className="facts">
+            {datasApi && datasApi.map((d) => (
+              <CardFact key={uuid()} fact={d.fact} />
+            ))}
+          </ul>
+          <Pagination currentPage={currentPage} lastPage={lastPage} getDatas={getFactsDatas} />
+        </>
+      )}
     </Main>
   );
 }

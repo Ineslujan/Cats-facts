@@ -30,14 +30,18 @@ function Breeds() {
     getBreedsDatas(1);
   }, []);
 
-  return isLoading ? <Loader /> : (
+  return (
     <Main>
-      <section className="breeds">
-        {datasApi && datasApi.map((d) => (
-          <CardBreed key={uuid()} breed={d} />
-        ))}
-      </section>
-      <Pagination currentPage={currentPage} lastPage={lastPage} getDatas={getBreedsDatas} />
+      {isLoading ? <Loader /> : (
+        <>
+          <section className="breeds">
+            {datasApi && datasApi.map((d) => (
+              <CardBreed key={uuid()} breed={d} />
+            ))}
+          </section>
+          <Pagination currentPage={currentPage} lastPage={lastPage} getDatas={getBreedsDatas} />
+        </>
+      )}
     </Main>
   );
 }

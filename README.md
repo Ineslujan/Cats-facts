@@ -46,6 +46,10 @@ More infos below...
 - react-router-dom
 - prop-types
 
+## <img src="https://i.pinimg.com/favicons/eee1ea14285a0813670f3c272baa63ed43868ff53ff6428daf58819e.ico?ce3a62efbee89be05901636321a0e4bd" alt="drawing" height="30"/> Design Pattern
+
+In this project, I use the file structure methodology "Atomic Design"
+
 ## -- More infos --
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
