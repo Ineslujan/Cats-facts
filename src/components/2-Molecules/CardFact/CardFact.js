@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './cardFact.scss';
+
 function CardFact({ fact }) {
   return (
-    <li className="facts-fact">
+    <q className="facts-fact">
       {fact}
-    </li>
+    </q>
   );
 }
 

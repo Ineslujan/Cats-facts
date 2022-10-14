@@ -7,6 +7,8 @@ import Loader from '../../1-Atoms/Loader/Loader';
 import CardFact from '../../2-Molecules/CardFact/CardFact';
 import Pagination from '../../2-Molecules/Pagination/Pagination';
 
+import './facts.scss';
+
 function Facts() {
   const [isLoading, setIsLoading] = useState(true);
   const [datasApi, setDatasApi] = useState([]);
@@ -32,11 +34,11 @@ function Facts() {
     <Main>
       {isLoading ? <Loader /> : (
         <>
-          <ul className="facts">
+          <article className="facts">
             {datasApi && datasApi.map((d) => (
               <CardFact key={uuid()} fact={d.fact} />
             ))}
-          </ul>
+          </article>
           <Pagination currentPage={currentPage} lastPage={lastPage} getDatas={getFactsDatas} />
         </>
       )}
