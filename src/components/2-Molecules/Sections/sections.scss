@@ -1,0 +1,12 @@
+.breedsOrFacts {
+  height: calc((100% / 3) * 2);
+}
+
+.breedsOrFacts-breeds, .breedsOrFacts-facts {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 20px;
+}

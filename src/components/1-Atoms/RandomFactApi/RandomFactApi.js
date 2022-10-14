@@ -3,7 +3,7 @@ import React from 'react';
 
 function RandomFactApi({ dataFactApi }) {
   return (
-    <q>
+    <q className="facts-fact">
       {dataFactApi && dataFactApi}
     </q>
   );

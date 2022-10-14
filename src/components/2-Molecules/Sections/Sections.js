@@ -6,6 +6,8 @@ import TitleChapter from '../../1-Atoms/TitleChapter/TitleChapter';
 
 import menu from '../../../datas/menu.json';
 
+import './sections.scss';
+
 function Sections() {
   return (
     <section className="breedsOrFacts">

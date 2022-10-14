@@ -1,9 +1,19 @@
 .buttonChangePage {
   padding: 20px;
-  background-color: brown;
+  background-color: rgb(10, 113, 10);
+  filter: drop-shadow(0 0 3px black);
+
+  border-radius: 10px;
+  height: 56px;
+  width: 56px;
 
   &-inactive {
     padding: 20px;
     pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.643);
+
+    border-radius: 10px;
+    height: 56px;
+    width: 56px;  
   }
 }

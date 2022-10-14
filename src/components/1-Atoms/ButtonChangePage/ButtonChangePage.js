@@ -9,10 +9,15 @@ function ButtonChangePage({
   lastPage,
   getDatas,
 }) {
+  const handleClick = () => {
+    getDatas(page);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <button
       type="button"
-      onClick={() => { getDatas(page); }}
+      onClick={handleClick}
       className={(page !== 0 && page !== lastPage + 1) ? 'buttonChangePage' : 'buttonChangePage-inactive'}
     >
       {currentPage > page && '<'}{currentPage < page && '>'}

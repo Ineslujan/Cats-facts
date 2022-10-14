@@ -1,5 +1,12 @@
 .button {
   width: 150px;
   padding: 20px;
-  background-color: brown;
+  background-color: rgb(10, 113, 10);
+  border-radius: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.4rem;
+  filter: drop-shadow(0 0 3px black);
+
 }
