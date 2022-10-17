@@ -1,7 +1,9 @@
+@use "src/vars";
+
 .breed {
   width: 280px;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.643);
+  background-color: vars.$colorCard;
   border-radius: 10px;
 
   &-breed {
@@ -13,7 +15,7 @@
   }
 
   &-tag {
-    color: #4d4c4c;
+    color: vars.$colorCardTag;
     width: 65px;
     text-align: right;
   }
