@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Refresh from '../ButtonRefresh/ButtonRefresh';
+
 import './refreshFactButton.scss';
 
 function RefreshFactButton({ getRandomFactDatas }) {
   return (
-    <button type="button" className="refreshButton" onClick={getRandomFactDatas}> 🔁 </button>
+    <button type="button" className="button refreshButton" aria-label="Refresh random fact button" onClick={getRandomFactDatas}>
+      <Refresh />
+    </button>
   );
 }
 

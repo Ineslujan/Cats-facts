@@ -1,6 +1,11 @@
+@use "src/_vars";
+
 .randomFact {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  row-gap: 20px;
   height: calc(100% / 3);
+  // box-shadow: 0 4px 4px -4px black;
 }

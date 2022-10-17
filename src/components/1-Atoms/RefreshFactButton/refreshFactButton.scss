@@ -1,5 +1,11 @@
-.button {
+@use "src/_vars";
+
+.refreshButton {
   width: 150px;
-  padding: 20px;
-  background-color: brown;
+  padding: 10px 20px;
+  background-color: vars.$colorBase;
+}
+.refreshButton:hover {
+  background-color: vars.$colorAlt;
+
 }

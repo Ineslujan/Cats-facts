@@ -3,6 +3,8 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: vars.$colorBase;
   filter: drop-shadow(0 0 3px black);
+  color: vars.$colorFontLight;
 }

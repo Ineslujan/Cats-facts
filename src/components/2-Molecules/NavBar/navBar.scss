@@ -1,3 +1,5 @@
+@use "src/_vars";
+
 .nav {
   display: flex;
 }
@@ -6,6 +8,14 @@
   padding: 20px 10px;
 }
 
+.nav li:hover {
+  background-color: vars.$colorAlt;
+  color: vars.$colorFontDark;
+}
+
 .underline {
-  border-bottom: solid 1px red;
+  background-color: vars.$colorAlt;
+  pointer-events: none;
+  color: vars.$colorFontDark;
+
 }
