@@ -8,9 +8,11 @@ function ButtonChangePage({
   currentPage,
   lastPage,
   getDatas,
+  setSearchValue,
 }) {
   const handleClick = () => {
     getDatas(page);
+    setSearchValue('');
     window.scrollTo(0, 0);
   };
 
@@ -30,6 +32,7 @@ ButtonChangePage.propTypes = {
   lastPage: PropTypes.number.isRequired,
   currentPage: PropTypes.number.isRequired,
   getDatas: PropTypes.func.isRequired,
+  setSearchValue: PropTypes.func.isRequired,
 };
 
 export default ButtonChangePage;

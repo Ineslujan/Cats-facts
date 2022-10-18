@@ -6,6 +6,7 @@ import Main from '../Main/Main';
 import Loader from '../../1-Atoms/Loader/Loader';
 import CardFact from '../../2-Molecules/CardFact/CardFact';
 import Pagination from '../../2-Molecules/Pagination/Pagination';
+import SearchForm from '../../2-Molecules/SearchForm/SearchForm';
 
 import './facts.scss';
 
@@ -14,6 +15,7 @@ function Facts() {
   const [datasApi, setDatasApi] = useState([]);
   const [currentPage, setCurrentPage] = useState(null);
   const [lastPage, setLastPage] = useState(null);
+  const [searchValue, setSearchValue] = useState('');
 
   const getFactsDatas = async (newPage) => {
     setIsLoading(true);
@@ -34,12 +36,20 @@ function Facts() {
     <Main>
       {isLoading ? <Loader /> : (
         <>
+          <SearchForm searchValue={searchValue} setSearchValue={setSearchValue} />
           <article className="facts">
-            {datasApi && datasApi.map((d) => (
+            {datasApi && datasApi.filter((data) => (
+              data.fact.toLowerCase().includes(searchValue.toLowerCase())
+            )).map((d) => (
               <CardFact key={uuid()} fact={d.fact} />
             ))}
           </article>
-          <Pagination currentPage={currentPage} lastPage={lastPage} getDatas={getFactsDatas} />
+          <Pagination
+            currentPage={currentPage}
+            lastPage={lastPage}
+            getDatas={getFactsDatas}
+            setSearchValue={setSearchValue}
+          />
         </>
       )}
     </Main>

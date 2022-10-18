@@ -6,7 +6,9 @@ import StatePages from '../../1-Atoms/StatePages/StatePages';
 
 import './pagination.scss';
 
-function Pagination({ currentPage, lastPage, getDatas }) {
+function Pagination({
+  currentPage, lastPage, getDatas, setSearchValue,
+}) {
   return (
     <div className="pagination">
       <ButtonChangePage
@@ -14,6 +16,7 @@ function Pagination({ currentPage, lastPage, getDatas }) {
         currentPage={currentPage}
         lastPage={lastPage}
         getDatas={getDatas}
+        setSearchValue={setSearchValue}
       />
       <StatePages currentPage={currentPage} lastPage={lastPage} />
       <ButtonChangePage
@@ -21,6 +24,7 @@ function Pagination({ currentPage, lastPage, getDatas }) {
         currentPage={currentPage}
         lastPage={lastPage}
         getDatas={getDatas}
+        setSearchValue={setSearchValue}
       />
     </div>
   );
@@ -30,6 +34,7 @@ Pagination.propTypes = {
   currentPage: PropTypes.number.isRequired,
   lastPage: PropTypes.number.isRequired,
   getDatas: PropTypes.func.isRequired,
+  setSearchValue: PropTypes.func.isRequired,
 };
 
 export default Pagination;
